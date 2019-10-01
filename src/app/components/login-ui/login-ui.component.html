@@ -1,0 +1,33 @@
+<!-- <div class="form">
+  <input type="text" class="form-control" placeholder="Username">
+
+</div> -->
+
+<div class="row">
+  <div style="padding-top: 15px;
+  padding-bottom: 15px; border-radius: 3%;" class="col-4 offset-4 shadow">
+    <div class="form justify-content-center ">
+      <h2
+        style="text-align: center; font-family: 'Encode Sans Expanded', sans-serif; font-weight: bold; color:  #B33FE1;">
+        Sign-In</h2>
+      <input type="text" style="height:50px" class="form-control mt-5 " placeholder="Username">
+
+      <input type="text" style="height:50px" class="form-control mt-3 " placeholder="Password">
+
+      <div class="row ">
+        <div class="col-7">
+          <a [routerLink]="['/forgot-password']" routerLinkActive="active"  style="font-family: 'Encode Sans Expanded', sans-serif;" class="form-text text-primary">Forgot
+            Password?</a>
+        </div>
+
+        <div class="col-5">
+          <a [routerLink]="['/new-account']" routerLinkActive="active"  style="font-family: 'Encode Sans Expanded', sans-serif;" class="form-text text-primary">Don't have
+            a account, Create one now!</a>
+        </div>
+      </div>
+
+      <button style="margin-top: 50px; margin-right: auto; " class="btn btn-primary btn-block">Sign-In</button>
+
+    </div>
+  </div>
+</div>

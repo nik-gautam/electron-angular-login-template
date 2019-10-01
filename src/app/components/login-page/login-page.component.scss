@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.login-header {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  // clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3vw), 0 100%);
+  background-image: linear-gradient(to bottom left, #E13F55, #B33FE1);
+  transform: skewY(-3deg);
+  transform-origin: top left;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  height: 200px;
+  
+
+  margin-bottom: 50px;
+
+  .row-alignment{
+    transform: skewY(3deg);
+    transform-origin: top left;
+  }
+}

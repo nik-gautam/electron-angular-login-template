@@ -1,0 +1,97 @@
+<div class="row">
+  <div style="padding-top: 15px;
+    padding-bottom: 15px; border-radius: 3%;" class="col-4 offset-4 shadow">
+    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" [mustMatch]="['password', 'confirmPassword']"
+      class="form justify-content-center" novalidate>
+
+      <div>
+        <a class="float-left" [routerLink]="['/']" href="" title="Back">
+
+          <i class="ml-1 mt-1 fa fa-chevron-circle-left fa-2x" style="color:#B33FE1"></i>
+
+        </a>
+        <h2
+          style="text-align: center; font-family: 'Encode Sans Expanded', sans-serif; font-weight: bold; color:  #B33FE1;">
+          Create Account
+        </h2>
+      </div>
+
+      <div class="form-group">
+
+        <input type="text" name="Name" style="height:50px;" class="form-control mt-5" [(ngModel)]="user.name"
+          #Name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Name.invalid }" placeholder="Name" required>
+
+        <div *ngIf="f.submitted && Name.invalid" class="invalid-feedback">
+          <div *ngIf="Name.errors.required">Name is required</div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <input type="text" name="Username" style="height:50px;" class="form-control mt-3" [(ngModel)]="user.userName"
+          #Username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Username.invalid }"
+          placeholder="Preferred Username" required>
+
+        <div *ngIf="f.submitted && Username.invalid" class="invalid-feedback">
+          <div *ngIf="Username.errors.required">Username is required</div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <input type="email" name="emailID" style="height:50px;" class="form-control mt-3" [(ngModel)]="user.emailID"
+          #emailID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && emailID.invalid }" placeholder="Email" required>
+
+        <div *ngIf="f.submitted && emailID.invalid" class="invalid-feedback">
+          <div *ngIf="emailID.errors.required">Email is required</div>
+          <div *ngIf="emailID.errors.email">Email must be a valid email address</div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <input type="password" name="password" style="height:50px;" class="form-control mt-3"
+          [(ngModel)]="user.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+          placeholder="Password" minlength="6" required>
+
+        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must contain atleast 6 characters</div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <input type="password" name="confirmPassword" style="height:50px;" class="form-control mt-3"
+          [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid }" placeholder="Re-Enter Password" required>
+
+        <div *ngIf="f.submitted && confirmPassword.invalid" class="invalid-feedback">
+          <div *ngIf="confirmPassword.errors.required">Re-enter Password</div>
+          <div *ngIf="confirmPassword.errors.mustMatch">Passwords must match</div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <input type="number" name="phoneNumber" style="height:50px;" class="form-control mt-3"
+          [(ngModel)]="user.phoneNumber" #phoneNumber="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && phoneNumber.invalid }" placeholder="Number" required>
+
+        <div *ngIf="f.submitted && phoneNumber.invalid" class="invalid-feedback">
+          <div *ngIf="phoneNumber.errors.required">Username is required</div>
+        </div>
+
+      </div>
+
+      <button style="text-align: center; font-family: 'Encode Sans Expanded', sans-serif; font-weight: bold;"
+        class="btn btn-primary btn-block mt-5 ">Sign-Up</button>
+
+    </form>
+  </div>
+</div>
